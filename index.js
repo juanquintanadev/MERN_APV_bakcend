@@ -67,7 +67,7 @@ app.use('/api/veterinarios', veteriarioRoutes);
 app.use('/api/pacientes', pacienteRoutes);
 
 // aca tambien utilizamos variable de entorno, ya que al realizar el deployment este se le asigna automaticamente, y si no lo encuentra como seria este caso se le asigna el puerto 4000
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 27017;
 
 // iniciamos el servidor
 app.listen(PORT, () => {
