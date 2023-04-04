@@ -31,25 +31,25 @@ app.use(express.json());
 // -----------------------------------------------------------------------------------------------------------
 // vamos a cargar las urls permitidas para que cors no cause problemas
 
-// // creamos un arreglo donde vamos a colocar las url permitidas para poder consultar la api
-// const urlPermitidas = [process.env.FRONTEND_URL];
+// creamos un arreglo donde vamos a colocar las url permitidas para poder consultar la api
+const urlPermitidas = [process.env.FRONTEND_URL];
 
-// // ahora vamos a cargar las opciones para poder pasarselas luego al cors
-// const corsOptions = {
-//     origin: function(origin, callback) {
-//         if(urlPermitidas.indexOf(origin) !== -1) {
-//             callback(null, true);
-//         } else {
-//             callback(new Error('Error de Cors, no permite acceso'));
-//         };
-//     },
-// };
+// ahora vamos a cargar las opciones para poder pasarselas luego al cors
+const corsOptions = {
+    origin: function(origin, callback) {
+        if(urlPermitidas.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            callback(new Error('Error de Cors, no permite acceso'));
+        };
+    },
+};
 
 // app.use(cors(corsOptions));
 
-app.use(cors({
-    origin: '*'
-}));
+// app.use(cors({
+//     origin: '*'
+// }));
 
 //-----------------------------------------------------------------------------------------------------------------
 
